@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Talleres — Forja Rocktalica</title>
+    <meta name="description" content="Inscripción a talleres de tiple, bandola y cuatro, o solicitud de un instrumento a medida en Forja Rocktalica.">
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header class="sitio-header">
+      <div class="envoltura">
+        <div class="barra">
+          <a class="marca" href="index.html">
+            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" aria-hidden="true" focusable="false">
+              <rect width="64" height="64" rx="8" fill="#2c4a3e"></rect>
+              <path d="M18 46 L32 12 L46 46" fill="none" stroke="#e8d5a3" stroke-width="3" stroke-linejoin="round"></path>
+              <circle cx="32" cy="28" r="4" fill="#c45c26"></circle>
+              <path d="M22 46h20" stroke="#e8d5a3" stroke-width="2"></path>
+            </svg>
+            Forja Rocktalica
+          </a>
+          <div class="acciones-header">
+            <button type="button" class="menu-boton" data-menu-boton aria-expanded="false" aria-controls="menu-principal">Menú</button>
+            <button type="button" class="tema-boton" data-tema-boton aria-label="Cambiar a modo oscuro">Oscuro</button>
+          </div>
+        </div>
+        <nav class="sitio-nav" aria-label="Principal">
+          <ul id="menu-principal" class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="catalogo.html">Instrumentos</a></li>
+            <li><a href="artesanos.html">Luthiers</a></li>
+            <li><a href="talleres.html" aria-current="page">Talleres</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="contenido" class="envoltura seccion">
+      <h1>Talleres y encargos</h1>
+      <p class="ladillo">Los grupos son de seis personas. El encargo de un instrumento tarda entre seis y doce semanas, según la cola del luthier.</p>
+      <div class="banda-talleres">
+        <section aria-labelledby="titulo-agenda">
+          <h2 id="titulo-agenda">Agenda del mes</h2>
+          <article class="bloque">
+            <h3>Tiple, sábados 10:00</h3>
+            <p>Ocho sesiones. Se parte de rasgueo y se llega a un bambuco sencillo. Incluye tiple de estudio durante la clase.</p>
+          </article>
+          <article class="bloque">
+            <h3>Cuatro llanero, sábados 14:00</h3>
+            <p>Golpe, bordoneo y dos pasajes de joropo. Para quien ya tiene oído, aunque no haya tocado cuatro.</p>
+          </article>
+          <article class="bloque">
+            <h3>Encargo a medida</h3>
+            <p>Se define escala, maderas y presupuesto con el luthier. No hay adelanto por el formulario: primero se responde el correo.</p>
+          </article>
+        </section>
+        <section id="formulario" aria-labelledby="titulo-formulario">
+          <h2 id="titulo-formulario">Inscripción o consulta</h2>
+          <p class="ayuda">El envío no sale si falta un campo o si el correo está mal escrito. Los avisos aparecen debajo de cada campo.</p>
+          <form id="form-taller" class="formulario" method="post" novalidate>
+            <div class="campo">
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required minlength="3" aria-describedby="error-nombre">
+              <p id="error-nombre" class="campo-error" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="correo">Correo</label>
+              <input id="correo" name="correo" type="email" autocomplete="email" required aria-describedby="error-correo">
+              <p id="error-correo" class="campo-error" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="interes">Qué te interesa</label>
+              <select id="interes" name="interes" required aria-describedby="error-interes">
+                <option value="">Elige una opción</option>
+                <option value="tiple">Taller de tiple</option>
+                <option value="cuatro">Taller de cuatro</option>
+                <option value="encargo">Encargo de instrumento</option>
+                <option value="restauracion">Restauración</option>
+              </select>
+              <p id="error-interes" class="campo-error" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" required minlength="20" aria-describedby="error-mensaje" placeholder="Cuéntanos tu nivel, el instrumento que buscas o la fecha que te sirve."></textarea>
+              <p id="error-mensaje" class="campo-error" hidden></p>
+            </div>
+            <button class="boton boton-principal" type="submit">Enviar solicitud</button>
+          </form>
+          <p id="form-exito" class="form-exito" hidden tabindex="-1">Recibimos tus datos en esta página. En un proyecto con servidor, aquí saldría el correo al taller. Por ahora el formulario queda listo para conectar Formspree o la API de la Entrega 2.</p>
+        </section>
+      </div>
+    </main>
+    <footer class="sitio-footer">
+      <div class="envoltura pie">
+        <section>
+          <h2>Forja Rocktalica</h2>
+          <p>Taller de cuerdas andinas en el centro de Bogotá. Instrumentos, restauración y talleres de iniciación.</p>
+        </section>
+        <section>
+          <h2>Visita</h2>
+          <p>Calle 19 # 4-21, local 3<br>Martes a sábado, 10:00 a 18:00</p>
+        </section>
+        <section>
+          <h2>Sitio</h2>
+          <ul>
+            <li><a href="catalogo.html">Instrumentos</a></li>
+            <li><a href="artesanos.html">Luthiers</a></li>
+            <li><a href="talleres.html">Talleres e inscripción</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="envoltura nota-legal">© <span id="anio-actual"></span> Forja Rocktalica. Proyecto académico de Desarrollo Web.</p>
+    </footer>
+    <script src="js/principal.js"></script>
+    <script src="js/formulario.js"></script>
+  </body>
+</html>
